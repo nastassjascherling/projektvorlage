@@ -1,0 +1,191 @@
+@use '../base'as *;
+
+.nav {
+
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.4rem 0;
+    z-index: 999;
+    
+    &__container {
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        @include container;
+    }
+
+    &__logo {
+        width: 180px;
+
+        img {
+            width:100%;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    &__burger {
+        z-index: 888; 
+    }
+    
+    &__burger__balken {
+
+        display: flex;
+        gap: 0.4rem;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 14px 5px;
+        border-radius: 5px;
+        width: 3.6rem;
+
+        transition: all 200ms ease-in-out;
+        @include round-border;
+
+        &:hover {
+            background-color: $red;
+
+            div {
+                background-color:white;
+            }
+        }
+    
+        div {
+            width: 100%;
+            height: 5px;
+            background-color: red;
+        }
+
+        &--x {
+
+            &:hover {
+                background-color: transparent;
+
+                div {
+                    background-color: red;
+                }
+            }
+
+            div:nth-child(1) {
+                position: relative;
+                top: 0.72rem;
+                transform: rotate(45deg);
+            }
+
+            div:nth-child(2) {
+                opacity: 0;
+            }
+
+            div:nth-child(3) {
+                position: relative;
+                bottom: 0.75rem;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &--on {
+
+            div {
+                background-color: red;
+            }
+
+            position: relative;
+            top: 0;
+            
+            transform: translateX(300%);
+            transition: all 300ms ease-in-out;
+
+        }
+        
+    }
+
+    &__barrierefrei {
+        width: 63px;
+        transition: all 300ms ease-in-out;
+
+        img {
+            width:100%;
+        }
+
+        &--off {
+            opacity: 0;
+        }
+    }
+
+    &__overlay {
+
+        width: 26vw;
+        height: 85%;
+
+        position: fixed;
+        top: 0;
+        right: -300%;
+
+        transition: all 300ms ease-in-out;
+
+        background-color: $grey;
+        overflow: hidden;
+
+        &--on {
+            right: 0 !important;
+            transition: all 300ms ease-in-out;
+        }
+
+        .nav__logo2 {
+            max-width: 150px;
+            position: relative;
+            right: -1rem;
+            top: 1rem;
+            z-index: 25;
+            opacity: 0;
+    
+            img {
+                width:100%;
+            }
+    
+            &--on {
+                opacity: 1;
+            }
+        }
+
+        .nav__menu {
+            padding: 4rem 2rem 8rem 2rem;
+
+            transition: all 300ms ease-in-out;
+            
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+    
+            z-index: -11;
+            height: 100%;
+            overflow-y: auto;
+    
+            ::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-height: 152px;
+                background-color: white;
+                cursor: default;
+            }
+    
+            & a {
+                text-decoration: none;
+                color: black;
+                font-size: 1.1rem;
+                font-weight: 700;  
+            }
+        }
+    }
+}

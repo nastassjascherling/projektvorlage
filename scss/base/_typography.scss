@@ -1,0 +1,93 @@
+@use 'variables'as *;
+
+//--------- font-weight: bold ---------//                       
+
+@font-face {
+    src: url("../../assets/fonts/GothamNarrow-Bold.otf");
+    font-family: "gotham-n";                //edit!
+}
+
+@mixin gotham-bold {
+    font-family: "gotham-n";                //edit!
+    font-weight: 700;
+    font-style: normal;
+}
+
+//--------- font-weight: normal ---------//
+
+@font-face {
+    src: url("../../assets/fonts/GothamNarrow-Medium.otf");
+    font-family: "gotham-n";                //edit!
+}
+
+@mixin gotham-medium {
+    font-family: "gotham-n";                //edit!
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* ---------- Text ---------- */
+
+html {
+    font-family: gotham-n;                  //edit!
+    font-weight: 400;
+    color: $copy;
+    font-size: 16px;
+    line-height: 28px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* a {
+    text-decoration: none;
+    color: $copy;
+}*/
+
+
+
+/* ---------- Headlines ---------- */
+
+h1 {
+    font-size: 2.4rem; //48px
+    line-height: 56px;
+    font-weight: 700;
+
+    @media (max-width: 600px) {
+        font-size: 1.8rem;
+        line-height: 45px;
+    }
+}
+
+h2 {
+    font-size: 2rem; //30px
+    line-height: 45px;
+    font-weight: 700;
+
+    @media (max-width: 600px) {
+        font-size: 1.6rem;
+        line-height: 40px;
+    }
+}
+
+h3 {
+    font-size: 1.3rem;
+    line-height: 36px;
+    font-weight: 700;
+
+    @media (max-width: 600px) {
+        font-size: 1.1rem;
+        line-height: 32px;
+    }
+}
+
+h4 {
+    font-size: 1.2rem;
+    line-height: 36px;
+    font-weight: 700;
+
+    @media (max-width: 600px) {
+        font-size: 1rem;
+        line-height: 32px;
+    }
+}
